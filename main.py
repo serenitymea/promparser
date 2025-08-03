@@ -1,5 +1,5 @@
 from myparsers import prom
-from myutils.saver import savetoc, savetoj
+from myutils.saver import savetoc, savetoj, savetoe
 
 def main():
     caturl = "https://prom.ua/ua/Domashnyaya-odezhda-zhenskaya"
@@ -16,8 +16,10 @@ def main():
 
     if filef == "json":
         savetoj(products, "output/prom_products.json")
-    else:
+    elif filef == "csv":
         savetoc(products, "output/prom_products.csv")
+    else:
+        savetoe(products, "output/prom_products.xlsx")
 
 if __name__ == "__main__":
     main()
